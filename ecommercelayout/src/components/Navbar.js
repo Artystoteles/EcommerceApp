@@ -4,6 +4,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 import { mobile } from "../responsive";
+
 import { useSelector } from "react-redux";
 
 const Container = styled.div`
@@ -106,8 +107,12 @@ const Navbar = () => {
           <Logo>Daniel.</Logo>
         </Center>
         <Right>
-          <MenuItem>REGISTER</MenuItem>
-          <MenuItem>SIGN IN </MenuItem>
+          <Link style={{ textDecoration: "none" }} to="/register">
+            <MenuItem>REGISTER</MenuItem>
+          </Link>
+          <Link style={{ textDecoration: "none" }} to="/login">
+            <MenuItem>SIGN IN </MenuItem>
+          </Link>
           <Link to="/cart">
             <MenuItem>
               <Badge badgeContent={quantity} color="primary">
